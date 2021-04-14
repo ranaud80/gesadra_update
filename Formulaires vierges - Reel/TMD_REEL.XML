@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-15"?><?xml-stylesheet type="text/xsl" href="..\msgTMD.XSL"?>
+<msg>
+<form>Message TMD</form>
+<soft>GesADRA</soft>
+<vers>V6.20</vers>
+<mode>Reel</mode>
+<trans>
+<gdh>__/__/__ __:__</gdh>
+<emis>___________</emis>
+<recu>___________</recu>
+<instr></instr>
+</trans>
+<top>
+<from>___________</from>
+<to>___________Z</to>
+<info></info>
+<urg>___________</urg>
+</top>
+<corps>
+<ong1>
+<veh>______________________</veh>
+<type>______________________</type>
+<pveh>_____</pveh>
+<capa>_____</capa>
+<vfret>_____</vfret>
+<pfret>_____</pfret>
+<compart>_____</compart>
+<rechauf>_____</rechauf>
+<refrig>_____</refrig>
+</ong1>
+<ong2>
+<cond>_______________</cond>
+<nbcond>_____</nbcond>
+<poids>_____</poids>
+</ong2>
+<ong3>
+<nom>_______________</nom>
+<tel>_______________</tel>
+<adr>________________________</adr>
+<immat>__________</immat>
+<nation>__________</nation>
+<exped>_______________</exped>
+<client>_______________</client>
+</ong3>
+</corps>
+<bot>
+<gdh>__/__/__ __:__</gdh>
+<ack>Non/Oui</ack>
+</bot>
+</msg>

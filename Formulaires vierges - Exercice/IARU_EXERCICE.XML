@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-15"?><?xml-stylesheet type="text/xsl" href="..\msgIARU.XSL"?>
+<message>
+<form>IARU Standard Message</form>
+<software>GesADRA</software>
+<version>V6.20</version>
+<exercise>Exercice</exercise>
+<id>_______</id>
+<precedance>_____________</precedance>
+<check>______</check>
+<filed><date>__ _______</date><time>____</time></filed>
+<origin><station>_______________</station><place>_______________</place></origin>
+<from>___________________</from>
+<to>_________________</to>
+<body><para>_______________________________________________________________________
+</para></body>
+</message>

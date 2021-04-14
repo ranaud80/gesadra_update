@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-15"?><?xml-stylesheet type="text/xsl" href="msgPOI.XSL"?>
+<msg>
+<form>Message POI</form>
+<soft>GesADRA</soft>
+<vers>V6.20</vers>
+<mode>Reel</mode>
+<trans>
+<gdh>__/__/__ __:__</gdh>
+<emis>__________</emis>
+<recu>__________</recu>
+<instr>________________________________________________________________________________</instr>
+</trans>
+<corps>
+<sys>__________</sys>
+<datum>__________</datum>
+<coordx>____________________</coordx>
+<coordy>____________________</coordy>
+<typrel>____________________</typrel>
+<detail>________________________________________</detail>
+<txt>________________________________________________________________________________</txt>
+</corps>
+</msg>
