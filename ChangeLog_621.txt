@@ -1,0 +1,53 @@
+[Corrections 6.20 => 6.21]
+Formulaire BilSEC.XML
+Message TMD
+Impression automatique des messages
+Affichage onglet RESEAU sous Window 7
+
+[Général]
+Ajustement des tailles de fenêtres
+Refonte graphique de l'écran principal
+Ajout d'une barre de menu
+Gestion des journaux dans des onglets
+Correction bugs sur le contrôle du focus
+Gestion des raccourcis clavier
+Ajout de stations depuis les écrans de Log.
+Synchronisation des stations entre les différents Journaux
+
+[Session]
+Refonte graphique de l'écran de paramétrage
+Gestion des fichiers de Session (Nouveau/Ouvrir)
+Le nom de session n'est plus paramétrable
+Ajout d'un réglage Impression des journaux
+
+[Réseau]
+Le Réseau devient un onglet "permanent"
+Ajout de rubriques "Alias Tactic", "Statut" et "Localisation"
+Gestion de liste pour les stations (Ajouter, Modifier, Supprimer)
+Correction d'un bug sur la 14ème station du réseau
+Correction d'un bug dans le ficher texte
+
+[Formulaires]
+Formatage d'un fichier XML pour chaque fiche message
+Définition d'un modèle XSL pour chaque fiche message
+
+[Liste des Victimes]
+Nouvelle fonctionnalité de gestion des victimes
+
+[BILAN SECOURISTE]
+Refonte de l'écran avec des onglets
+Numérotation automatique des victimes
+Saisie en erreur : affichage de l'onglet concerné
+
+[BILAN TEMPORAIRE]
+Refonte de l'écran avec des onglets
+
+[DEMANDE DE MOYENS]
+Refonte de l'écran avec des onglets
+
+[Transp. Matière Dangereuse]
+Refonte de l'écran avec des onglets
+
+[Rens. Matière Dangereuse]
+Simplification de la saisie du Code Danger
+Ajout du code panneau (classe de danger)

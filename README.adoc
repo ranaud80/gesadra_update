@@ -1,0 +1,86 @@
+# GESADRA
+
+Bonjour à tous,
+
+En 2011, un groupe de radioamateurs travaillent sur un logiciel de gestion de trafic dans le cadre des missions de sécurité civile.
+Au fil du temps, le groupe s'est étoffé, le logiciel a mûri et ses fonctionalités se sont étendues : GesADRA V6.21 est désormais disponible.
+
+Quand la mission d'une association agréée de sécurité civile (ADRASEC) consiste en l'établissement d'un réseau de transmission (RTS, plan ORSEC, ...),
+l'application GesADRA permet la gestion informatisée de la main courante du trafic radio et la saisie des messages transmis.
+
+Après une présentation officiel lors de la réunion de zone SUD-EST (Association Départementale des Radioamatreurs de lA SEcurité Civile) en avril, GesADRA est diffusé plus largement.
+Nous vous proposons de tester GesADRA, et de découvrir le site Internet qui lui est dédié http://gesadra.free.fr/
+
+== Installation ==
+Pour le faire fonctionner, vous téléchargerez puis installerez :
+
+* le logiciel Python (langage et moteur d'exécution - version 2.6(disponible dans l'espace téléchargement) ou 2.7 recommandée) https://www.python.org/downloads/release/python-269/
+
+* la bibliothèque graphique Pmw (un fichier d'installation est disponible dans l'espace téléchargement) https://pypi.org/project/Pmw/
+
+* l'application GesADRA V6.21 (un fichier d'installation est disponible dans l'espace téléchargement)
+
+Vous trouverez une documentation dans le répertoire après l'installation.
+
+
+Cordiales 73'
+Pour le groupe GesADRA,
+Laurent - F5IXC
+
+N.B. : GesADRA est un outil et n'impose aucune méthodologie ou procédure.
+
+== GesAdra c'est quoi ? ==
+
+GesAdra est :
+
+* un projet : un projet permanent dont le but est de construire une solution logicielle à l’harmonisation et à la gestion des messages radios échangés lors de plans de secours.
+* simple : et se veut facile d’accès, tant pour son utilisation que pour son installation.
+* bâti autour du langage Python et de fichiers textes (humainement lisibles).
+* souple : il est adaptable par son paramétrage, le choix des formats de fichiers et sa conception en formulaires.
+* connectable : il doit pouvoir échanger avec d’autres applications radioamateurs (cartographie, packet, etc…).
+* fédérateur : il propose d’unifier les échanges entre les intervenants, au sein d’une Adrasec, entre Adrasec, ou entre votre Adrasec et vos interlocuteurs.
+* évolutif : en fonction de vos retours d’expérience, pour s’adapter aux besoins les plus courants exprimés par les différentes Adrasec utilisatrices.
+
+== Comment est né GesAdra ? ==
+
+GesAdra est né du constat, suite à un exercice de transmission « grandeur nature » (plusieurs jours, sites, et départements), éxercice ayant mis en évidence le besoin d’un outil de suivi du trafic radio et la nécessité d’harmoniser les messages échangés (tant au niveau de la présentation que du contenu).
+ 
+Sur l’initiative d’opérateurs, membres de plusieur adrasec, une première version de GesADRA a vu le jour, puis les suivantes, issues d’un travail relativement local. Aujourd’hui GesADRA V6.00 existe suite à la mise en place d’une « équipe projet » multi-zonale et au développement de nouvelles fonctionnalités.
+
+== Description de l'application ==
+
+GESADRA PRÉSENTE DEUX TYPES D’ÉCRANS :
+* les écrans de gestion, qui permettent de saisir les échanges radio sous forme de « journaux de trafic » (MCI-xxx.CSV comme log principale, POI-xxx.CSV pour les données cartographiques, SAT-xxx.CSV pour les relevés Sater).
+* les formulaires, qui permettent de formater des fichiers textes destinés à être transmis en mode numérique.
+Le paramétrage du logiciel est lié à la notion de « session », correspondant peu ou prou à une vacation ou un évènement. Il est possible d’ajuster ces paramètres via le bouton « Configurer » et le panneau de configuration qu’il propose.
+
+Hormis l’écran principal, la Main Courante est le point central de l’application, toutes les actions effectuées dans GesAdra (saisie dans une autre log ou constitution d’un message) sont automatiquement reportées dans la MCI.
+
+
+De plus, l’ajout de stations peut se faire directement depuis la Main Courante, sans passer par la gestion de session.
+Description de l'application
+
+GesAdra présente deux types d’écrans :
+Les onglets de gestion, insérés dans l'écran principal, qui permettent de saisir les échanges radio sous forme de « journaux de trafic » (MCI-xxx.CSV comme log principale, POI-xxx.CSV pour les données cartographiques, SAT-xxx.CSV pour les relevés Sater).
+les formulaires, qui permettent de formater des fichiers TXT ou XML destinés à être transmis en mode numérique.
+Le paramétrage du logiciel est lié à la notion de « session », correspondant peu ou prou à une vacation ou un évènement. Il est possible d’ajuster ces paramètres via le menu « Paramètres/Session » et l'écran qu'il propose.
+Hormis l’onglet principal Gestion du Réseau, la Main Courante est le point central de l’application, toutes les actions effectuées dans GesAdra (saisie dans une autre log ou constitution d’un message) sont automatiquement reportées dans la MCI.
+De plus, l’ajout de stations peut se faire directement depuis l'onglet de gestion sur lequel vous êtes positionné, sans passer par la gestion de session.
+
+Saisie des informations :
+Les champs de saisie apparaissant en rouge doivent être obligatoirement renseignés, une bulle d’aide apparaît lorsque l’utilisateur positionne la souris quelques secondes sur la zone.
+Sauf mention contraire, les listes de choix sont saisissables. Vous pouvez ainsi entrer au clavier une information ne figurant pas dans la liste de choix. Si cette information est récurrente, vous pouvez modifier le contenu de la liste dans le fichier de configuration GesAdra.cfg.
+(Attention cependant, certains traitements sont liés aux valeurs de ces listes – contactez l’équipe de développement)
+
+== Installation Windows ==
+Installation sous windows
+
+
+* Installer Python 2.6.x depuis le site http://www.python.org/download/
+* Récupérer le dossier pmw1.3.2.tar.gz depuis http://sourceforge.net/projects/pmw/
+* Décompresser le dossier et récupérer le sous-dossier srcPmw.
+* Allez dans C :Python26Lib.
+* Déposer le sous-dossier Pmw récupéré précédemment.
+* Décompressez GesADRAV6.zip dans un répertoire de votre choix
+* Lancez l’application GesADRA.pyw
+ 
