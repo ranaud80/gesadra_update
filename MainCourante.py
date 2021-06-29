@@ -79,29 +79,29 @@ class FormMCI:
         self._drawBoutonMSG(7, vLigne+2, 1)
         self._drawBoutonMSG(8, vLigne+2, 2)
         # Contrôles standards
-        Label (vFen, text = "Groupe Date/Heure : " ).grid( row = vLigne, column = 0, sticky = W)
+        Label (vFen, text = "Gr. Date/Heure : " ).grid( row = vLigne, column = 0, sticky = W)
         self.efGdh = Commun.gdhWidget(self.root, vFen)
         self.efGdh.grid(row = vLigne, column = 1, columnspan = 2, sticky = W)
-        self.bGdh = Button(vFen, width = 8, bd = 1, fg = "blue", text = "Forcer", command = self.forcerGDH, underline = 1)
+        self.bGdh = Button(vFen, width = 5, bd = 1, fg = "blue", text = "Forcer", command = self.forcerGDH, underline = 1) # , width = 8
         self.bGdh.grid(row = vLigne, column = 3)
         vLigne += 1
-        Label (vFen, text = "De (Emetteur) : " ).grid( row = vLigne, column = 0,columnspan = 1, sticky = W)
+        Label (vFen, text = "De (Emetteur) :" ).grid( row = vLigne, column = 0, sticky = W)  # ,columnspan = 1
         self.efEmetteur = Pmw.EntryField (vFen, validate = {"validator" : Commun.indicatifValidator, "min" : 2, "max" : 8, "minstrict" : False, "maxstrict" : False})
         self.efEmetteur.component('entry').bind('<Key>', Commun.uppercaseKey)
-        self.efEmetteur.grid (row = vLigne,column = 1, columnspan = 2, sticky = W)
+        self.efEmetteur.grid (row = vLigne,column = 1, columnspan = 2, sticky = W)  # 
         Label ( vFen, text = "A (Destinataire) : " ).grid( row = vLigne, column = 4,columnspan = 2, sticky = W)
         self.efDestinataire = Pmw.EntryField (vFen, validate = {"validator" : Commun.indicatifValidator, "min" : 2, "max" : 8, "minstrict" : False, "maxstrict" : False})
         self.efDestinataire.component('entry').bind('<Key>', Commun.uppercaseKey)
         self.efDestinataire.grid (row = vLigne, column = 6, columnspan = 2, sticky = W)
         vLigne += 1
-        Label (vFen, text = "Degré d'urgence : " ).grid( row = vLigne, column = 0, columnspan = 2, sticky = W)
+        Label (vFen, text = "Deg. d'urg. :" ).grid( row = vLigne, column = 0, sticky = W) # , columnspan = 2
         self.cbDegUrg = Commun.comboWidget(self.root, vFen, self.root.cfgListe['DegUrg'])
         self.cbDegUrg.grid(row = vLigne, column = 1, columnspan = 3, sticky = W)
-        Label (vFen, text = "Transmis en : " ).grid( row = vLigne, column = 4, columnspan = 2, sticky = W)
+        Label (vFen, text = "Transmis en :" ).grid( row = vLigne, column = 4, columnspan = 2, sticky = W)
         self.cbMoyTrans = Commun.comboWidget(self.root, vFen, self.root.cfgListe['Moyen_RX'])
         self.cbMoyTrans.grid(row = vLigne, column = 6, columnspan = 3, rowspan = 1,  sticky = W)
         vLigne += 1
-        Label (vFen, text = "Texte du message : " ).grid( row = vLigne, column = 0,columnspan = 2, sticky = W)
+        Label (vFen, text = "Te. du mess. :" ).grid( row = vLigne, column = 0, sticky = W)  # ,columnspan = 2
         self.efTexte = Pmw.EntryField (vFen, validate = {"min" : 1, "max" : 80, "minstrict" : False, "maxstrict" : False})
         self.efTexte.grid(row = vLigne, column = 1, columnspan = 9, sticky = E+W)
         vLigne += 1
@@ -126,14 +126,14 @@ class FormMCI:
         sbListe.grid(row = vLigne, column = 1, sticky = N+S)
     #
     def _drawBoutonE (self, indice, colonne, ligne):
-        bouton = Button(self.fenetre, width = 5, foreground = "#ff0000", takefocus = 1)
+        bouton = Button(self.fenetre, foreground = "#ff0000", takefocus = 1) # , width = 5
         bouton.config(command = lambda x = indice : self.cliquerRecuDe(x))
         bouton.grid(column = colonne, row = ligne, sticky = E+W)
         if indice == 0: bouton.grid_remove() # Suppression du bouton 0 "Tous"
         self.boutonE.append(bouton)
     #        
     def _drawBoutonD (self, indice, colonne, ligne):
-        bouton = Button(self.fenetre, width = 5, foreground = "#009900", takefocus = 1)
+        bouton = Button(self.fenetre, foreground = "#009900", takefocus = 1) # , width = 5
         bouton.config(command = lambda x = indice : self.cliquerEmisVers(x))
         bouton.grid(column = colonne, row = ligne, sticky = E+W)
         if indice == 0: bouton.config(text = "TOUS") # Initialisation du bouton 0 "Tous"
@@ -152,7 +152,7 @@ class FormMCI:
             
     def _drawBoutonMSG (self, indice, ligne, colonne):
         vTexte = self.root.cfgListe["Msg"+str(indice)][0]
-        bMsg = Button(self.fBtn, text = vTexte, width = 15, fg = "blue")
+        bMsg = Button(self.fBtn, text = vTexte, fg = "blue") # , width = 15
         bMsg.config(command = lambda x = indice : self.cliquerMessage(x))
         bMsg.grid(row = ligne, column = colonne, sticky = E+W, padx = 5, pady = 3)
         self.root.bulle.bind(bMsg, self.root.cfgListe["Msg"+str(indice)][1])

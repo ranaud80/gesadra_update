@@ -26,7 +26,8 @@ class FormNewSess(Toplevel):
         Toplevel.__init__(self)
         Pmw.initialise()
         # Paramétrage de la fenêtre
-        self.iconbitmap("appli.ico")
+        if ( sys.platform.startswith('win')): 
+            self.iconbitmap("appli.ico")
         self.resizable(width = False, height = False)
         self.wm_state()
         self.title ("Nouvelle Session")
@@ -151,7 +152,8 @@ class FormSession(Toplevel):
         Toplevel.__init__(self)
         Pmw.initialise()
         # Paramétrage de la fenêtre
-        self.iconbitmap("appli.ico")
+        if ( sys.platform.startswith('win')): 
+            self.iconbitmap("appli.ico")
         self.resizable(width = False, height = False)
         self.wm_state()
         self.title ("Paramètres de Session")

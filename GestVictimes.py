@@ -43,14 +43,14 @@ class FormGVict:
         vFen = self.fenetre
 
         # Le label zone cachée "réserve" la place du bouton[0] dans le gridder
-        Label (vFen,text = "zone cachée", bg = "orange",width=9).grid(row = vLigne, column = 1, sticky = E+W)
+        #Label (vFen,text = "zone cachée", bg = "orange",width=9).grid(row = vLigne, column = 1, sticky = E+W)
         Label (vFen,text = "Stations présentes sur le réseau", fg = "blue",bg = "orange").grid(row = vLigne, column = 0,columnspan = 16, sticky = E+W)
         vLigne += 1
         # 14 boutons "Emetteur"
         Label (vFen, text = "Reçu de :").grid(row = vLigne, column = 0)
         for indice in range(0, 15):
-            bouton = Button(vFen, width = 6, foreground = "red", takefocus = 1)    # width = 8
-            bouton.grid(column = indice+1, row = vLigne, sticky = E+W)
+            bouton = Button(vFen, foreground = "red", takefocus = 1)    # width = 8
+            bouton.grid(column = indice, row = vLigne, sticky = E+W)             # indice+1
             bouton.configure(command = lambda x = indice : self.cliquerRecuDe(x))
             if indice == 0: bouton.grid_remove() # Suppression du bouton 0 "Tous"
             self.boutonE.append(bouton)
@@ -62,7 +62,7 @@ class FormGVict:
         Label (vFen, text = "Groupe Date/Heure : ").grid(row = vLigne, column = 0, sticky = W)
         self.efGdh = Commun.gdhWidget(self.root, vFen)
         self.efGdh.grid(row = vLigne, column = 1, columnspan = 2, sticky = W)
-        self.bGdh = Button(vFen, width = 8, bd = 1, fg = "blue", text = "Forcer", command = self.forcerGDH, underline = 0)
+        self.bGdh = Button(vFen, bd = 1, fg = "blue", text = "Forcer", command = self.forcerGDH, underline = 0)   #  , width = 8
         self.bGdh.grid(row = vLigne, column = 3)
         vLigne += 1
 
@@ -77,7 +77,7 @@ class FormGVict:
         # Victime
         Label (vFen, text = "Num Victime : ").grid(row = vLigne, column = 0,sticky = W) 
         self.efNum = Pmw.EntryField (vFen, validate = {"validator" : Commun.numValidator, "min" : 1, "max" : 99999, "minstrict" : False, "maxstrict" : False})
-        self.efNum.component('entry').config(width = 8) 
+        self.efNum.component('entry').config(width = 5) 
         self.efNum.grid(row = vLigne, column = 1, sticky = W) 
         self.bNum = Button(vFen, width = 8, bd = 1, fg = "blue", text = "Num. Auto", command = self.numAuto, underline = 0)
         self.bNum.grid(row = vLigne, column = 2)
@@ -112,7 +112,7 @@ class FormGVict:
         vLigne += 1
     
         self.bValider = Button (vFen, text = "Valider", command = self.validerGVict, fg = "red", underline = 0)
-        self.bValider.grid (row = vLigne, column = 1, columnspan = 2, sticky = E+W, padx = 5,pady = 5 )
+        self.bValider.grid (row = vLigne, column = 2, columnspan = 2, sticky = E+W, padx = 5,pady = 5 )           # column = 1
         self.bEffacer = Button (vFen, text = "Effacer", command = self.effacerGVict, fg = "red", underline = 0)
         self.bEffacer.grid (row = vLigne, column = 4, columnspan = 2, sticky = E+W, padx = 5,pady = 5)
         self.bQuitter = Button (vFen, text = "Quitter", command = self.quitterGVict, fg = "red", underline = 0)

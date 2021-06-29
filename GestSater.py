@@ -40,29 +40,31 @@ class FormGSat:
         vFen = self.fenetre
 
         # Le label zone cachée "réserve" la place du bouton[0] dans le gridder
-        Label (vFen,text = "zone cachée", bg = "orange",width=9).grid(row = vLigne, column = 1, sticky = E+W)
+        #Label (vFen,text = "zone cachée", bg = "orange",width=9).grid(row = vLigne, column = 1, sticky = E+W)
         Label (vFen,text = "Stations présentes sur le réseau", fg = "blue",bg = "orange").grid(row = vLigne, column = 0,columnspan = 16, sticky = E+W)
         vLigne += 1
+        
         # 14 boutons "Emetteur"
         Label (vFen, text = "Reçu de :").grid(row = vLigne, column = 0)
         for indice in range(0, 15):
-            bouton = Button(vFen, width = 6, foreground = "red", takefocus = 1) # width=8
-            bouton.grid(column = indice+1, row = vLigne, sticky = E+W)
+            bouton = Button(vFen, foreground = "red", takefocus = 1) # width=8
+            bouton.grid(column = indice, row = vLigne, sticky = E+W)
             bouton.configure(command = lambda x = indice : self.cliquerRecuDe(x))
-            if indice == 0: bouton.grid_remove() # Suppression du bouton 0 "Tous"
+            if indice == 0: bouton.grid_remove() # Suppression du bouton 0 "Tous"  
             self.boutonE.append(bouton)
         vLigne += 1
-
+        
         # Données du relevé
         Label (vFen,text = "Informations Relevé Sater ", fg = "blue",bg = "orange").grid(row = vLigne, column = 0, columnspan = 16, sticky = E+W)
         vLigne += 1
+        
         Label (vFen, text = "Groupe Date/Heure : ").grid(row = vLigne, column = 0, sticky = W)
         self.efGdh = Commun.gdhWidget(self.root, vFen)
         self.efGdh.grid(row = vLigne, column = 1, columnspan = 2, sticky = W)
-        self.bGdh = Button(self.fenetre, width = 8, bd = 1, fg = "blue", text = "Forcer", command = self.forcerGDH, underline = 0)
+        self.bGdh = Button(self.fenetre, bd = 1, fg = "blue", text = "Forcer", command = self.forcerGDH, underline = 0) # , width = 8
         self.bGdh.grid(row = vLigne, column = 3)
         vLigne += 1
-
+        
         Label (vFen, text = "Emis par : ").grid(row = vLigne, column = 0, sticky = W)
         self.cbEmetteur = Commun.indicatifWidget(self.root, vFen, self.root)
         self.cbEmetteur.grid (row = vLigne, column = 1, columnspan = 3, sticky = W)
@@ -78,7 +80,7 @@ class FormGSat:
         self.cbDatum = Commun.comboWidget (self.root, vFen, self.root.cfgListe['Datum'])
         self.cbDatum.grid (row = vLigne, column = 6, columnspan = 3, sticky = W)
         vLigne += 1
-
+        
         Label (vFen, text = "Coordonnée X :").grid(row = vLigne, column = 0, sticky = W)
         self.efCoordX = Commun.coordWidget(self.root, vFen)
         self.efCoordX.grid (row = vLigne, column = 1, columnspan = 2, sticky = W)
@@ -99,9 +101,9 @@ class FormGSat:
         self.efComment = Pmw.EntryField(vFen, validate = {"max" : 80, "maxstrict" : False})
         self.efComment.grid(row = vLigne, column = 1, columnspan = 8, sticky = E+W )
         vLigne += 1
-
+        
         self.bValider = Button (vFen, text = "Valider", command = self.validerGSat, fg = "red", underline = 0)
-        self.bValider.grid (row = vLigne, column = 1, columnspan = 2, sticky = E+W, padx = 5,pady = 5 )
+        self.bValider.grid (row = vLigne, column = 2, columnspan = 2, sticky = E+W, padx = 5,pady = 5 )
         self.bEffacer = Button (vFen, text = "Effacer", command = self.effacerGSat, fg = "red", underline = 0)
         self.bEffacer.grid (row = vLigne, column = 4, columnspan = 2, sticky = E+W, padx = 5,pady = 5)
         self.bQuitter = Button (vFen, text = "Quitter", command = self.quitterGSat, fg = "red", underline = 0)

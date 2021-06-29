@@ -230,7 +230,8 @@ def nouvelleFenetre(root, titre):
     # Paramétrage de la fenêtre
     fenetre.resizable(width = False, height = False)
     fenetre.wm_state()
-    fenetre.iconbitmap("appli.ico")
+    if ( sys.platform.startswith('win')): 
+        fenetre.iconbitmap("appli.ico")
     fenetre.title (titre +" - Activation : " + root.userData['ACTIVATION'])
 
     # Instanciation d'une bulle d'aide
